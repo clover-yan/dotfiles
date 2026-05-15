@@ -1,0 +1,7 @@
+{{- if ne .chezmoi.osRelease.name "Arch Linux" }}
+.config/yay
+{{- end }}
+{{- if ne .chezmoi.hostname "khyan-ks" }}
+.config/qq-bwrap-flags.conf
+Pictures
+{{- end }}

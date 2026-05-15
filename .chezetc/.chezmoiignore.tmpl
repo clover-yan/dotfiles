@@ -1,0 +1,12 @@
+{{- if ne .chezmoi.osRelease.name "Arch Linux" }}
+pacman.conf
+{{- end }}
+{{- if ne .chezmoi.hostname "khyan-ks" }}
+fonts
+keyd
+locale.conf
+modprobe.d/nvidia-power-management.conf
+pam.d
+sysctl.d
+systemd/logind.conf.d
+{{- end }}

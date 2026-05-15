@@ -1,0 +1,12 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+EDITOR=vim
+{{- if eq .chezmoi.hostname "khyan-ks" }}
+XMODIFIERS=@im=fcitx
+QT_IM_MODULE=fcitx
+QT_IM_MODULES=wayland;fcitx
+VK_LOADER_DRIVERS_DISABLE=nvidia_icd.json
+{{- end }}

@@ -1,0 +1,11 @@
+.local/share/oh-my-zsh/custom/mouse.zsh:
+  type: file
+  url: https://github.com/matschaffer/oh-my-zsh-custom/raw/eb3e49d268743d2d8454011550739a978fed5478/mouse.zsh
+.local/share/oh-my-zsh/custom/plugins/zsh-autosuggestions:
+  type: git-repo
+  url: https://github.com/zsh-users/zsh-autosuggestions.git
+  refreshPeriod: 168h
+.local/share/oh-my-zsh/custom/plugins/zsh-syntax-highlighting:
+  type: git-repo
+  url: https://github.com/zsh-users/zsh-syntax-highlighting.git
+  refreshPeriod: 168h
