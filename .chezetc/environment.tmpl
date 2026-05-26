@@ -10,3 +10,6 @@ QT_IM_MODULE=fcitx
 QT_IM_MODULES=wayland;fcitx
 VK_LOADER_DRIVERS_DISABLE=nvidia_icd.json
 {{- end }}
+{{- if eq .chezmoi.osRelease.name "Ubuntu" }}
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+{{- end }}
