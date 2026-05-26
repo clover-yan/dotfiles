@@ -137,3 +137,6 @@ bindkey -M vicmd M zle-toggle-mouse
 
 zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ':completion:*:approximate:*' max-errors 2
+
+export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
