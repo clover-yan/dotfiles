@@ -120,10 +120,12 @@ PS1="%F{8}%*%f ${PS1}"
 [[ $SSH_CONNECTION ]] && PS1="%F{3} %m%f ${PS1}"
 [[ $SHLVL -ne 1 ]] && PS1="%F{4} ${SHLVL}%f ${PS1}"
 
-if [[ "$widgets[accept-line]" != "builtin" ]]; then
-	zle -A accept-line _khyan_orig-accept-line
-else
-	zle -A .accept-line _khyan_orig-accept-line
+if ! zle -la _khyan_orig-accept-line; then
+	if [[ "$widgets[accept-line]" != "builtin" ]]; then
+		zle -A accept-line _khyan_orig-accept-line
+	else
+		zle -A .accept-line _khyan_orig-accept-line
+	fi
 fi
 khyan_accept-line() {
 	zle reset-prompt
