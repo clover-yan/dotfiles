@@ -1,0 +1,3 @@
+{{- if stat (joinPath .chezmoi.homeDir ".chezetc") }}
+export PATH="$HOME/.chezetc:$PATH"
+{{- end }}

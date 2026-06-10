@@ -1,11 +1,9 @@
+source "$XDG_CONFIG_HOME"/zsh/khyan_envs.zsh
+
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-
-{{- if stat (joinPath .chezmoi.homeDir ".chezetc") }}
-export PATH="$HOME/.chezetc:$PATH"
-{{- end }}
 
 export _Z_DATA="$XDG_DATA_HOME/z"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -14,9 +12,11 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
 export ETC_SRC="$XDG_DATA_HOME"/chezmoi/.chezetc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GOPATH="$XDG_DATA_HOME"/go
 export IDAUSR="$XDG_DATA_HOME"/ida
 export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
+export OCTAVE_SITE_INITFILE="$XDG_CONFIG_HOME/octave/octaverc"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export WINEPREFIX="$XDG_DATA_HOME"/wine
