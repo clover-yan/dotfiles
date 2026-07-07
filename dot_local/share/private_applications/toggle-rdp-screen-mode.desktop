@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=切换远程桌面屏幕模式
+Comment=在镜像与扩展模式之间切换
+Exec=/home/khyan/.local/bin/toggle-rdp-screen-mode
+Icon=video-display
+Categories=System;Settings;

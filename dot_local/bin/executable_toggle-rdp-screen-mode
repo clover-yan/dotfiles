@@ -1,0 +1,2 @@
+#!/bin/bash
+/bin/bash -c 'NOTIF_ID_FILE="/tmp/rdp_screen_mode_switcher"; LAST_ID=$(cat "$NOTIF_ID_FILE" 2>/dev/null); CURRENT=$(gsettings get org.gnome.desktop.remote-desktop.rdp screen-share-mode); if [ "$CURRENT" = "'\''mirror-primary'\''" ]; then NEW="extend"; else NEW="mirror-primary"; fi; gsettings set org.gnome.desktop.remote-desktop.rdp screen-share-mode "$NEW" && NEW_ID=$(notify-send.py -a "切换远程桌面屏幕模式" -i "video-display-symbolic" -r "${LAST_ID:-0}" "远程桌面模式" "已切换至 $NEW") && echo "$NEW_ID" > "$NOTIF_ID_FILE"'
