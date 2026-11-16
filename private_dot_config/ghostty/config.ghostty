@@ -19,8 +19,10 @@ adjust-cell-height = 20%
 theme = light:ptyxis-gnome-light,dark:ptyxis-gnome
 
 # ── Window ───────────────────────────────────────────────────────
-window-width = 120
-window-height = 32
+# Note: Ghostty 1.4.0 divides text-scaling (1.13) out one extra time when estimating the
+# initial window size, so 120x32 actually yields ~108x25. Measured: 136x39 -> exactly 120x32.
+window-width = 136
+window-height = 39
 window-subtitle = working-directory
 # Ptyxis pads the terminal with 7px 6px 3px 6px (logical px). Ghostty's padding is in pt.
 window-padding-x = 4
