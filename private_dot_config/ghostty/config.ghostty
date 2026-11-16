@@ -1,0 +1,62 @@
+# Ghostty configuration replicating Ptyxis
+# References:
+#   `gsettings list-recursively org.gnome.Ptyxis`
+#   `/org/gnome/Ptyxis/palettes/gnome.palette`
+
+# ── Font ─────────────────────────────────────────────────────────
+# Ghostty goes through fontconfig on Linux.
+font-family = monospace
+font-size = 11
+# Line spacing: under the zh_CN locale VTE folds the CJK fallback font's line height
+# (1.32em) into the cell. Measured (same machine, 133% + text-scaling 1.13):
+#   Ptyxis/VTE cell 10x22 logical px = 13.33x29.33 device px
+#   Ghostty    cell 13x24 device px (em 22px, identical to VTE)
+# Only the line pitch differs: 24 -> 29.33, i.e. 29.33/24.2 ~ +21%; 20% gives 29px, off by 0.3px.
+adjust-cell-height = 20%
+
+# ── Colors ───────────────────────────────────────────────────────
+# Ptyxis: palette='gnome', follows the system light/dark preference
+theme = light:ptyxis-gnome-light,dark:ptyxis-gnome
+
+# ── Window ───────────────────────────────────────────────────────
+window-width = 120
+window-height = 32
+window-subtitle = working-directory
+# Ptyxis pads the terminal with 7px 6px 3px 6px (logical px). Ghostty's padding is in pt.
+window-padding-x = 4
+window-padding-y = 4
+# Match Ptyxis's Adwaita look
+window-decoration = auto
+gtk-titlebar = true
+gtk-toolbar-style = raised
+gtk-tabs-location = top
+gtk-single-instance = detect
+
+# ── Cursor ───────────────────────────────────────────────────────
+# Ptyxis: cursor-shape=block, cursor-blink-mode=system
+cursor-style = block
+cursor-style-blink = true
+
+# ── Selection ────────────────────────────────────────────────────
+# Ptyxis inverts the selection per cell. These two values exist since 1.2.0.
+selection-background = cell-foreground
+selection-foreground = cell-background
+
+# ── Bell ─────────────────────────────────────────────────────────
+# Ptyxis: audible-bell=true, visual-bell=true
+# GNOME will ring the bell
+bell-features = system,border
+
+# ── Scrollback ───────────────────────────────────────────────────
+# Ptyxis: limit-scrollback=false
+scrollback-limit-bytes = unlimited
+scrollback-limit-lines = unlimited
+
+# ── Close confirmation ───────────────────────────────────────────
+# Ptyxis: prompt-on-close=true
+confirm-close-surface = true
+
+# ── Keybindings ──────────────────────────────────────────────────
+# Ghostty defaults ctrl+enter to toggle_fullscreen.
+# Unbound to use ^↵ in OpenCode (sending CSI 13;5u).
+keybind = ctrl+enter=unbind
