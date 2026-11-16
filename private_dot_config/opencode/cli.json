@@ -4,7 +4,7 @@
     "name": "system"
   },
   "keybinds": {
-    "input.submit": "ctrl+return,alt+return,<leader>return",
+    "input.submit": "ctrl+return,alt+return",
     "input.newline": "return,shift+return,ctrl+j"
   },
   "diffs": {
@@ -15,5 +15,10 @@
     "scrollbar": false,
     "thinking": "show"
   },
-  "animations": true
+  "animations": true,
+  "tabs": {
+    "layout": "vertical",
+    "mode": "auto",
+    "indicators": "numbers"
+  }
 }
