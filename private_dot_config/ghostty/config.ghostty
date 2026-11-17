@@ -5,7 +5,19 @@
 
 # ── Font ─────────────────────────────────────────────────────────
 # Ghostty goes through fontconfig on Linux.
+# However, Ghostty does not handle fallback correctly, using wrong metrics for
+# fallback glyphs incorrectly, making them render smaller. And, Ghostty only
+# discovers the regular style for fallback faces, so there's no bold or italic
+# for CJK.
+# Explicitly adding the CJK fonts solves this. And we also add regular script
+# fonts for italic and bold-italic CJK text, since it's not a thing to use
+# italic in Asian languages.
 font-family = monospace
+font-family = Maple Mono NF CN
+font-family-italic = monospace
+font-family-italic = LXGW WenKai Mono Light
+font-family-bold-italic = monospace
+font-family-bold-italic = LXGW WenKai Mono Medium
 font-size = 11
 # Line spacing: under the zh_CN locale VTE folds the CJK fallback font's line height
 # (1.32em) into the cell. Measured (same machine, 133% + text-scaling 1.13):
