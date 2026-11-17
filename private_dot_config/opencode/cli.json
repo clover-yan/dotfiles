@@ -13,12 +13,16 @@
   "session": {
     "sidebar": "auto",
     "scrollbar": false,
-    "thinking": "show"
+    "thinking": "show",
+    "verbosity": "medium"
   },
   "animations": true,
   "tabs": {
     "layout": "vertical",
     "mode": "auto",
     "indicators": "numbers"
+  },
+  "prompt": {
+    "image_preview": true
   }
 }
