@@ -28,7 +28,7 @@ adjust-cell-height = 20%
 
 # ── Colors ───────────────────────────────────────────────────────
 # Ptyxis: palette='gnome', follows the system light/dark preference
-theme = light:ptyxis-gnome-light,dark:ptyxis-gnome
+theme = light:Selenized Light,dark:Selenized Dark
 
 # ── Window ───────────────────────────────────────────────────────
 # Note: Ghostty 1.4.0 divides text-scaling (1.13) out one extra time when estimating the
@@ -40,6 +40,7 @@ window-subtitle = working-directory
 window-padding-x = 4
 window-padding-y = 4
 # Match Ptyxis's Adwaita look
+window-theme = ghostty
 window-decoration = auto
 gtk-titlebar = true
 gtk-toolbar-style = raised
